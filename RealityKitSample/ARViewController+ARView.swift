@@ -157,6 +157,7 @@ extension ARViewController: ARSessionDelegate {
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         camera?.transform = .init(matrix: frame.camera.transform)
+        showMemoryInfo()
     }
 
 }

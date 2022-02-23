@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -75,11 +74,18 @@
                                     <action selector="onTapSelectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jyQ-XL-AG5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Beu-Lx-l1c">
+                                <rect key="frame" x="0.0" y="841" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hfp-sf-cdm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Jf-2I-g70"/>
+                            <constraint firstItem="Beu-Lx-l1c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7sX-Ew-IaW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aLk-Oa-pHe" secondAttribute="bottom" id="AdO-b3-566"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KyH-ey-K2Z" secondAttribute="bottom" id="OKv-Id-gpJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aLk-Oa-pHe" secondAttribute="trailing" id="RkG-qZ-OLC"/>
@@ -93,11 +99,13 @@
                             <constraint firstItem="nsg-q1-5WX" firstAttribute="top" secondItem="8qK-zE-guo" secondAttribute="bottom" id="qGQ-jL-Z1e"/>
                             <constraint firstItem="OGQ-hA-zFJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="t74-VT-iqu"/>
                             <constraint firstAttribute="trailing" secondItem="hfp-sf-cdm" secondAttribute="trailing" id="tgN-f3-kiS"/>
+                            <constraint firstItem="Beu-Lx-l1c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xmL-wJ-XgQ"/>
                             <constraint firstItem="KyH-ey-K2Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yGI-st-Qxf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="arView" destination="hfp-sf-cdm" id="PRq-jp-E6g"/>
+                        <outlet property="memoryInfoLabel" destination="Beu-Lx-l1c" id="KiY-LX-Mud"/>
                         <outlet property="objectNameLabel" destination="8qK-zE-guo" id="qrL-BN-5k1"/>
                         <outlet property="removeButton" destination="KyH-ey-K2Z" id="Sv3-yA-ace"/>
                         <outlet property="selectButton" destination="nsg-q1-5WX" id="vu3-bp-jvc"/>
