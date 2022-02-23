@@ -7,6 +7,7 @@
 //
 
 import RealityKit
+import UIKit
 
 // https://developer.apple.com/jp/augmented-reality/quick-look/
 enum ModelType: String {
@@ -31,6 +32,7 @@ class ModelComponent: RealityKit.Component, Equatable {
     }
     var state: State = .idle
     weak var entity: ModelEntity?
+    weak var box: ModelEntity?
     
     init(entity: ModelEntity) {
         self.entity = entity
@@ -46,10 +48,23 @@ class ModelComponent: RealityKit.Component, Equatable {
     
     func select() {
         state = .selected
+
+        if let entity = self.entity {
+            let size = entity.visualBounds(relativeTo: entity).extents
+            let boxMesh = MeshResource.generateBox(size: size)
+            let boxMaterial = SimpleMaterial(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5), roughness: 0, isMetallic: true)
+            let boxEntity = ModelEntity(mesh: boxMesh, materials: [boxMaterial])
+            boxEntity.position.y = size.y / 2
+            entity.addChild(boxEntity)
+
+            self.box = boxEntity
+        }
     }
     
     func cancel() {
         state = .idle
+        box?.removeFromParent()
+        box = nil
     }
     
     func removeObject() {
