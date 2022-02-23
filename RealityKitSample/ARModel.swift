@@ -68,8 +68,29 @@ class ModelComponent: RealityKit.Component, Equatable {
     }
     
     func removeObject() {
-        entity?.removeFromParent()
+        guard let entity = self.entity else { return }
+        
+        let duration = 0.2
+
+        entity.transform.scale = SIMD3(repeating: 1.0)
+        var scaleTransform = entity.transform
+        scaleTransform.scale = SIMD3(repeating: 0.01)
+        entity.move(to: scaleTransform, relativeTo: entity.parent, duration: duration, timingFunction: .linear)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+            entity.removeFromParent()
+        }
     }
+
+    func spawnAnimation() {
+        guard let entity = self.entity else { return }
+
+        entity.transform.scale = SIMD3(repeating: 0.0)
+        var scaleTransform = entity.transform
+        scaleTransform.scale = SIMD3(repeating: 1.0)
+        entity.move(to: scaleTransform, relativeTo: entity.parent, duration: 0.2, timingFunction: .linear)
+    }
+    
     
     static func == (lhs: ModelComponent, rhs: ModelComponent) -> Bool {
         return lhs.entity == rhs.entity

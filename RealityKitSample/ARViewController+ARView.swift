@@ -74,6 +74,7 @@ extension ARViewController {
             guard let entity = Entity.createARModel(type: type, position: position) else { return }
             DispatchQueue.main.async(execute: {
                 self.planeAnchor.addChild(entity)
+                entity.getModelComponent()?.spawnAnimation()
                 self.selectObject(entity.getModelComponent())
                 self.arView.installGestures([.translation, .rotation], for: entity).forEach { entityGestureRecognizer in
                     entityGestureRecognizer.delegate = self
