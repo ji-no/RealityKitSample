@@ -7,6 +7,7 @@
 //
 
 import ARKit
+import RealityKit
 
 // MARK: - SCNView Extensions
 extension SCNView {
@@ -30,15 +31,15 @@ extension SCNView {
 
 }
 
-// MARK: - ARSCNView Extensions
-extension ARSCNView {
+// MARK: - ARView Extensions
+extension ARView {
     
-    func realWorldVector(for location: CGPoint) -> SCNVector3? {
-        if let raycast = raycastQuery(from: location,
-                                      allowing: .estimatedPlane,
-                                      alignment: .any) {
+    func realWorldVector(for location: CGPoint) -> SIMD3<Float>? {
+        if let raycast = makeRaycastQuery(from: location,
+                                          allowing: .estimatedPlane,
+                                          alignment: .any) {
             if let result = session.raycast(raycast).first {
-                return SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
+                return SIMD3<Float>(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             }
         }
         return nil

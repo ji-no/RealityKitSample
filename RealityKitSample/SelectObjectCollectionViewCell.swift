@@ -12,7 +12,7 @@ class SelectObjectCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    var item: ARObjectNode.ObjectType? {
+    var item: ModelType? {
         didSet {
             guard let item = self.item else { return }
             nameLabel.text = item.rawValue

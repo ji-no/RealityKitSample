@@ -12,8 +12,7 @@
 		3B71D0AF27C6010200F8651C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0AD27C6010200F8651C /* Main.storyboard */; };
 		3B71D0B127C6010400F8651C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0B027C6010400F8651C /* Assets.xcassets */; };
 		3B71D0B427C6010400F8651C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0B227C6010400F8651C /* LaunchScreen.storyboard */; };
-		3B71D0BF27C6025F00F8651C /* ARObjectNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0BB27C6025F00F8651C /* ARObjectNode.swift */; };
-		3B71D0C127C6025F00F8651C /* ARViewController+ARSCNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0BD27C6025F00F8651C /* ARViewController+ARSCNView.swift */; };
+		3B71D0C127C6025F00F8651C /* ARViewController+ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0BD27C6025F00F8651C /* ARViewController+ARView.swift */; };
 		3B71D0C227C6025F00F8651C /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0BE27C6025F00F8651C /* ARViewController.swift */; };
 		3B71D0CA27C6026A00F8651C /* SceneKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0C327C6026A00F8651C /* SceneKitUtils.swift */; };
 		3B71D0CC27C6026A00F8651C /* SelectObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0C527C6026A00F8651C /* SelectObjectViewController.swift */; };
@@ -23,6 +22,7 @@
 		3B71D0DC27C609E100F8651C /* ChairSwan.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0D627C609E100F8651C /* ChairSwan.usdz */; };
 		3B71D0DE27C609E100F8651C /* ToyBiplane.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0D827C609E100F8651C /* ToyBiplane.usdz */; };
 		3B71D0E027C609E100F8651C /* Teapot.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 3B71D0DA27C609E100F8651C /* Teapot.usdz */; };
+		3B71D0E227C6233000F8651C /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B71D0E127C6233000F8651C /* ARModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,7 @@
 		3B71D0B027C6010400F8651C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B71D0B327C6010400F8651C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B71D0B527C6010400F8651C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B71D0BB27C6025F00F8651C /* ARObjectNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARObjectNode.swift; sourceTree = "<group>"; };
-		3B71D0BD27C6025F00F8651C /* ARViewController+ARSCNView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARSCNView.swift"; sourceTree = "<group>"; };
+		3B71D0BD27C6025F00F8651C /* ARViewController+ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ARViewController+ARView.swift"; sourceTree = "<group>"; };
 		3B71D0BE27C6025F00F8651C /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		3B71D0C327C6026A00F8651C /* SceneKitUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneKitUtils.swift; sourceTree = "<group>"; };
 		3B71D0C527C6026A00F8651C /* SelectObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectObjectViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		3B71D0D627C609E100F8651C /* ChairSwan.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ChairSwan.usdz; sourceTree = "<group>"; };
 		3B71D0D827C609E100F8651C /* ToyBiplane.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = ToyBiplane.usdz; sourceTree = "<group>"; };
 		3B71D0DA27C609E100F8651C /* Teapot.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Teapot.usdz; sourceTree = "<group>"; };
+		3B71D0E127C6233000F8651C /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,8 @@
 				3B71D0A727C6010200F8651C /* AppDelegate.swift */,
 				3B71D0A927C6010200F8651C /* SceneDelegate.swift */,
 				3B71D0BE27C6025F00F8651C /* ARViewController.swift */,
-				3B71D0BD27C6025F00F8651C /* ARViewController+ARSCNView.swift */,
-				3B71D0BB27C6025F00F8651C /* ARObjectNode.swift */,
+				3B71D0BD27C6025F00F8651C /* ARViewController+ARView.swift */,
+				3B71D0E127C6233000F8651C /* ARModel.swift */,
 				3B71D0C727C6026A00F8651C /* Extensions.swift */,
 				3B71D0C327C6026A00F8651C /* SceneKitUtils.swift */,
 				3B71D0C927C6026A00F8651C /* SelectObjectCollectionViewCell.swift */,
@@ -181,13 +181,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B71D0C227C6025F00F8651C /* ARViewController.swift in Sources */,
-				3B71D0BF27C6025F00F8651C /* ARObjectNode.swift in Sources */,
 				3B71D0A827C6010200F8651C /* AppDelegate.swift in Sources */,
 				3B71D0CC27C6026A00F8651C /* SelectObjectViewController.swift in Sources */,
+				3B71D0E227C6233000F8651C /* ARModel.swift in Sources */,
 				3B71D0D027C6026A00F8651C /* SelectObjectCollectionViewCell.swift in Sources */,
 				3B71D0CE27C6026A00F8651C /* Extensions.swift in Sources */,
 				3B71D0CA27C6026A00F8651C /* SceneKitUtils.swift in Sources */,
-				3B71D0C127C6025F00F8651C /* ARViewController+ARSCNView.swift in Sources */,
+				3B71D0C127C6025F00F8651C /* ARViewController+ARView.swift in Sources */,
 				3B71D0AA27C6010200F8651C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KN8A5629Q7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RealityKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -365,7 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KN8A5629Q7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RealityKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -7,17 +7,25 @@
 //
 
 import ARKit
+import RealityKit
 
 class ARViewController: UIViewController {
-    @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var arView: ARView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var objectNameLabel: UILabel!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var selectButton: UIButton!
     
-    var selectedObject: ARObjectNode?
-    var swipeStartObjectPosition: SCNVector3?
-    var swipeStartPosition: SCNVector3?
+    var camera: AnchorEntity?
+    lazy var planeAnchor: AnchorEntity = {
+        let fishAnchor = AnchorEntity(world: .zero)
+        arView.scene.addAnchor(fishAnchor)
+        return fishAnchor
+    }()
+
+    var selectedObject: ModelComponent?
+    var swipeStartObjectPosition: SIMD3<Float>?
+    var swipeStartPosition: SIMD3<Float>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
